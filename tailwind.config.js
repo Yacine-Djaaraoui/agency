@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -16,7 +16,31 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    keyframes: {
+      fadeIn: {
+        "0%": {
+          transform: "scale(1)",
+          opacity: "0.8",
+        },
+        "100%": {
+          transform: "scale(1.2)",
+          opacity: "1",
+        },
+      },
+    },
+    animation: {
+      fadeIn: "fadeIn 3s ease-out forwards",
+    },
     extend: {
+      transitionDuration: {
+        2000: "2000ms",
+        3000: "3000ms",
+        4000: "4000ms",
+        5000: "5000ms",
+      },
+      backgroundImage: {
+        landing: "url('./public/images/284553.jpg')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -74,4 +98,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

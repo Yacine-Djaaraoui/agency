@@ -1,15 +1,22 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React from "react";
 import "./App.css";
-import { Button } from "@/components/ui/button";
+import { Routes, Route } from "react-router-dom";
 
+import Home from "./comp/Home";
+import Nav from "./comp/Nav";
 
 function App() {
   return (
     <>
-      <h2 className="text-red-500">yacine</h2>
-      <Button>Click me</Button>
+      <div className=" min-w-[300px] ">
+        <Nav></Nav>
+        <div className=" ">
+          {" "}
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
+      </div>
     </>
   );
 }
