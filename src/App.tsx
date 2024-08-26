@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./comp/Home";
+import Home from "./comp/LandingPage";
 import Nav from "./comp/Nav";
 
 function App() {

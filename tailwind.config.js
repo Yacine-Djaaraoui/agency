@@ -19,17 +19,19 @@ module.exports = {
     keyframes: {
       fadeIn: {
         "0%": {
-          transform: "scale(1)",
-          opacity: "0.8",
+          // transform: "scale(1)",
+          top: "45%",
+          opacity: "0",
         },
         "100%": {
-          transform: "scale(1.2)",
+          // transform: "scale(1.2)",
+          top: "50%",
           opacity: "1",
         },
       },
     },
     animation: {
-      fadeIn: "fadeIn 3s ease-out forwards",
+      fadeIn: "fadeIn 2s ease-out forwards",
     },
     extend: {
       transitionDuration: {
