@@ -34,9 +34,32 @@ const Nav = () => {
     { label: "Tetimonials", id: "vehicles" },
     { label: "Contact", id: "about" },
   ];
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the page is scrolled more than 50px
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className=" border-b-white border-b-[0.3px] bg-transparent fixed top-0 right-0 w-full z-50 h-fit ">
+    <header
+      className={` border-b-white border-b-[0.3px] ${
+        isScrolled ? "bg-white  " : "bg-transparent"
+      } fixed top-0 right-0 w-full z-[100] h-fit {} `}
+    >
       <div className="  flex h-[70px] lg:h-[90px] container justify-between items-center">
         <div className="logoImg ">
           <Link to={"/"}>
@@ -53,7 +76,9 @@ const Nav = () => {
             <SheetTrigger>
               <FontAwesomeIcon
                 icon={faBars}
-                className="lg:hidden self-center h-6 rounded-full w-6 p-[2px] text-white "
+                className={`lg:hidden self-center h-6 rounded-full w-6 p-[2px] ${
+                  isScrolled ? "text-black  " : "text-white"
+                } `}
               />
             </SheetTrigger>
             <SheetContent className="">
@@ -91,7 +116,9 @@ const Nav = () => {
           {Navlinks.map((item) => (
             <li
               key={item.label}
-              className="group relative inline-block  overflow-hidden rounded  border-r-gray-100    text-sm font-normal text-white  focus:outline-none focus:ring  "
+              className={`group relative inline-block  overflow-hidden rounded  border-r-gray-100    text-sm font-normal  ${
+                isScrolled ? " text-black  " : "text-white"
+              }  focus:outline-none focus:ring `}
             >
               <button
                 onClick={() => handleNavClick(item)}

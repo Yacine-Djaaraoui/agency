@@ -20,7 +20,7 @@ module.exports = {
       fadeIn: {
         "0%": {
           // transform: "scale(1)",
-          top: "45%",
+          top: "40%",
           opacity: "0",
         },
         "100%": {
@@ -29,9 +29,22 @@ module.exports = {
           opacity: "1",
         },
       },
+      fadeIn2: {
+        "0%": {
+          // transform: "scale(1)",
+          top: "55%",
+          opacity: "0",
+        },
+        "100%": {
+          // transform: "scale(1.2)",
+          top: "66%",
+          opacity: "1",
+        },
+      },
     },
     animation: {
-      fadeIn: "fadeIn 2s ease-out forwards",
+      fadeIn: "fadeIn  ease 3s",
+      fadeIn2: "fadeIn2  ease 3s",
     },
     extend: {
       transitionDuration: {
@@ -44,6 +57,8 @@ module.exports = {
         landing: "url('./public/images/284553.jpg')",
       },
       colors: {
+        orange: "#eb662b",
+        title : "#36353a",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

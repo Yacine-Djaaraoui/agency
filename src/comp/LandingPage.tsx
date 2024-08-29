@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
+import { Button } from "@/components/ui/button";
 
 const images = [
   "../../public/images/pexels-francesco-ungaro-273758.jpg",
@@ -53,10 +54,14 @@ const LandingPage = () => {
             />
           </div>
         ))}
-        <h2 className="container animate-fadeIn absolute sm:w-fit right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 text-white font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center leading-10 md:leading-tight lg:leading-snug xl:leading-normal z-50">
+        <h2 className="container animate-fadeIn absolute sm:w-fit transform right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 text-white font-bold text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-center leading-10 md:leading-tight lg:leading-snug xl:leading-normal z-50">
           {" "}
           Travel, Enjoy And Live a New Full Life
         </h2>
+        <Button className="absolute animate-fadeIn2  right-1/2 translate-x-1/2 top-[66%] -translate-y-[50%] text-white  text-xl z-50 bg-orange rounded-3xl p-6 ">
+          {" "}
+          Get Started
+        </Button>
         {/* <p className=" container absolute right-1/2 lg:w-fit translate-x-1/2 top-[68%] -translate-y-1/2 text-white leading-8 md:leading-9 lg:leading-10 xl:leading-normal  text-center 	 z-50 ">
           We don’t just work with concrete and steel. We work with people We are
           Approachable, with even our highest work work with oncrete and steel.
@@ -89,7 +94,6 @@ const LandingPage = () => {
           ))}
         </div> */}
       </div>
-      
     </>
   );
 };
