@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
@@ -7,18 +7,10 @@ import {
   faCrown,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import trips from '../constants'
-interface Trip {
-  country: string;
-  place: string;
-  days: number;
-  type: string;
-  image: string;
-  price: number;
-}
+import trips from "../constants";
 
 // TripCard Component
-const TripCard: React.FC<{ trip: Trip }> = ({ trip }) => {
+const TripCard: React.FC<{ trip: any }> = ({ trip }) => {
   return (
     <div className="border rounded-lg overflow-hidden shadow-lg">
       {/* Image Section */}
@@ -55,7 +47,7 @@ const TripCard: React.FC<{ trip: Trip }> = ({ trip }) => {
 };
 
 // TripList Component
-const TripList: React.FC = () => {
+const TripList: React.FC<{ trips: any[] }> = ({ trips }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
       {trips.map((trip, index) => (
@@ -67,6 +59,14 @@ const TripList: React.FC = () => {
 
 // CardList Component
 const CardList: React.FC = () => {
+  const [filterType, setFilterType] = useState<string>("All");
+
+  const getFilteredTrips = (type: string) => {
+    return type === "All" ? trips : trips.filter((trip) => trip.type === type);
+  };
+
+  const filteredTrips = getFilteredTrips(filterType);
+
   return (
     <section className="container mx-auto p-4">
       <div className="text-center mb-6">
@@ -82,24 +82,44 @@ const CardList: React.FC = () => {
         <ul className="flex flex-wrap justify-center gap-4">
           <li className="flex items-center">
             <FontAwesomeIcon icon={faPlusCircle} />
-            <span className="ml-2">ALL</span>
+            <span
+              className="ml-2 cursor-pointer"
+              onClick={() => setFilterType("All")}
+            >
+              ALL
+            </span>
           </li>
           <li className="flex items-center">
             <FontAwesomeIcon icon={faGem} />
-            <span className="ml-2">Luxury</span>
+            <span
+              className="ml-2 cursor-pointer"
+              onClick={() => setFilterType("Luxury")}
+            >
+              Luxury
+            </span>
           </li>
           <li className="flex items-center">
             <FontAwesomeIcon icon={faCrown} />
-            <span className="ml-2">Premium</span>
+            <span
+              className="ml-2 cursor-pointer"
+              onClick={() => setFilterType("Premium")}
+            >
+              Premium
+            </span>
           </li>
           <li className="flex items-center">
             <FontAwesomeIcon icon={faEarth} />
-            <span className="ml-2">Standard</span>
+            <span
+              className="ml-2 cursor-pointer"
+              onClick={() => setFilterType("Standard")}
+            >
+              Standard
+            </span>
           </li>
         </ul>
       </div>
       <div className="text-center">
-        <TripList />
+        <TripList trips={filteredTrips} />
       </div>
     </section>
   );
