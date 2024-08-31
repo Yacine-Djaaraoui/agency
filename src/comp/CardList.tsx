@@ -12,7 +12,7 @@ import trips from "../constants";
 // TripCard Component
 const TripCard: React.FC<{ trip: any }> = ({ trip }) => {
   return (
-    <div className="border rounded-lg overflow-hidden shadow-lg">
+    <div className="border rounded-lg overflow-hidden shadow-lg ">
       {/* Image Section */}
       <div className="relative">
         <img
@@ -20,14 +20,14 @@ const TripCard: React.FC<{ trip: any }> = ({ trip }) => {
           alt={trip.place}
           className="w-full h-64 object-cover"
         />
-        <div className="absolute top-4 left-4 bg-blue-600 bg-opacity-80 text-white px-2 py-1 rounded-full flex items-center space-x-2">
+        <div className="absolute top-4 left-4 bg-orange  text-white px-2 py-1 rounded-full flex items-center space-x-2">
           <FontAwesomeIcon icon={faMapMarkerAlt} className="text-xs" />
           <span className="text-xs">{trip.country}</span>
         </div>
       </div>
 
       {/* Details Section */}
-      <div className="p-4">
+      <div className="p-4" >
         <div className="flex justify-between mb-4">
           <div className="text-black font-semibold">{trip.days} Days</div>
           <div className="text-black font-semibold">{trip.type}</div>
@@ -37,7 +37,7 @@ const TripCard: React.FC<{ trip: any }> = ({ trip }) => {
         <hr className="border-gray-300 my-4" />
         <div className="flex justify-between items-center">
           <div className="text-xl font-bold">${trip.price}</div>
-          <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+          <button className="bg-orange text-white py-2 px-4 rounded-md hover:bg-black">
             Explore
           </button>
         </div>
@@ -68,18 +68,18 @@ const CardList: React.FC = () => {
   const filteredTrips = getFilteredTrips(filterType);
 
   return (
-    <section className="container mx-auto p-4">
+    <section className="container mx-auto p-4 mt-16 ">
       <div className="text-center mb-6">
-        <p className="mt-4 text-center mb-4">
+        <p className="mt-4 text-center mb-5">
           <span className="text-lg md:text-xl font-semibold text-gray-700 italic">
             Get to know us
           </span>{" "}
           <br />
-          <span className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <span className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight ">
             Explore the world
           </span>
         </p>
-        <ul className="flex flex-wrap justify-center gap-4">
+        <ul className="flex flex-wrap justify-center gap-4 mb-8">
           <li className="flex items-center">
             <FontAwesomeIcon icon={faPlusCircle} />
             <span
