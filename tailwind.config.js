@@ -58,7 +58,9 @@ module.exports = {
       },
       colors: {
         orange: "#eb662b",
-        title : "#36353a",
+        title: "#36353a",
+        beje: "#faf5ef",
+        orangeLight: "#f0ebe5",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

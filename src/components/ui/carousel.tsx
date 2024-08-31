@@ -204,7 +204,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-8 w-8 rounded-full",
+        "absolute h-8 w-8 bg-transparent text-black lg:h-12 lg:w-12 rounded-full lg:bg-orange lg:text-white p-0 border-none lg:hover:bg-orange lg:hover:bg-opacity-85 lg:hover:text-white",
         orientation === "horizontal"
           ? "-left-8 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -217,7 +217,7 @@ const CarouselPrevious = React.forwardRef<
       <ArrowLeft className="h-4 w-4" />
       <span className="sr-only">Previous slide</span>
     </Button>
-  )
+  );
 })
 CarouselPrevious.displayName = "CarouselPrevious"
 
@@ -233,7 +233,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "absolute h-8 w-8 bg-transparent text-black lg:h-12 lg:w-12 rounded-full lg:bg-orange lg:text-white p-0 border-none lg:hover:bg-orange lg:hover:bg-opacity-85 lg:hover:text-white",
         orientation === "horizontal"
           ? "-right-8 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -246,7 +246,7 @@ const CarouselNext = React.forwardRef<
       <ArrowRight className="h-4 w-4" />
       <span className="sr-only">Next slide</span>
     </Button>
-  )
+  );
 })
 CarouselNext.displayName = "CarouselNext"
 
