@@ -65,7 +65,7 @@ const Testimonials = () => {
   return (
     <div>
       <div className="container mt-24 mb-24 ">
-        <h2 className=" text-2xl lg:text-4xl text-center font-bold mb-4 text-title">
+        <h2 className=" text-2xl lg:text-4xl text-center font-bold mb-3 text-title">
           {" "}
           WHAT OUR CLIENTS SAY{" "}
         </h2>

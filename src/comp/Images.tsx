@@ -5,6 +5,10 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Content } from "@radix-ui/react-dialog";
+import { LucideAudioWaveform } from "lucide-react";
+
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -23,35 +27,68 @@ const Images = () => {
 
   return (
     <>
-      <div className="container mt-24 mb-24">
-        <h2 className="text-2xl lg:text-4xl text-center font-bold mb-4 text-title">
-          WHAT OUR CLIENTS SAY
+      <div className=" mt-44 mb-44 ">
+        <h2 className=" text-2xl lg:text-4xl text-center font-bold mb-14 text-title">
+          MOST FAVORITE PICTURES
         </h2>
-        <div className="container text-center overflow-hidden">
-          <Carousel
-            opts={{
-              align: "start",
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {Testimonials.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="py-12 md:px-4">
-                    <div className="border rounded-lg overflow-hidden shadow-lg">
-                      <img
-                        src={image}
-                        alt={`Slide ${index + 1}`}
-                        className="w-full h-auto object-cover"
-                      />
+        <div className=" relative pb-28 before:absolute before:w-full before:h-80 before:bottom-0 before:bg-orangeLight  ">
+          <div className="container text-center overflow-hidden   ">
+            <Carousel
+              opts={{
+                align: "start",
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="">
+                {Testimonials.map((item, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4 "
+                  >
+                    <div className="p-0 flex items-center justify-center">
+                      <Card className=" w-full">
+                        <CardContent className=" p-0  h-[470px] sm:h-[400px]   relative hover:scale-105 transition-all duration-500  ease  before:absolute before:bg-orange before:w-full before:h-0 before:opacity-20 hover:before:h-full before:transition-all before:ease before:duration-500 before:bottom-0 before:z-50  before:right-0  ">
+                          <img
+                            src={item}
+                            alt=""
+                            className=" w-full h-full  object-cover rounded-lg  "
+                          />
+                        </CardContent>
+                      </Card>
                     </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+            {/* {Testimonials.map((item, index) => (
+            <li className="border border-black p-6 min-w-[410px]">
+              <div className="stars flex justify-center items-center">
+                {calculStars(item)}
+              </div>{" "}
+              <p className="mt-4 text-center">{item.Content}</p>
+              <h2 className="mt-4 font-bold">{item.name}</h2>
+            </li>
+          ))}
+
+          <div className="flex items-center justify-center gap-4 mt-5 mb-5">
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              onClick={() => {
+                setArrow("left");
+                setTranslateX((prev) => prev + 440);
+              }}
+            />
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              onClick={() => {
+                setArrow("right");
+                setTranslateX((prev) => prev - 440);
+              }}
+            />
+          </div> */}
+          </div>
         </div>
       </div>
     </>

@@ -56,8 +56,8 @@ const Nav = () => {
 
   return (
     <header
-      className={` border-b-white border-b-[0.3px] ${
-        isScrolled ? "bg-white  " : "bg-transparent"
+      className={`     ${
+        isScrolled ? "bg-white  shadow-lg " : "bg-transparent"
       } fixed top-0 right-0 w-full z-[100] h-fit {} `}
     >
       <div className="  flex h-[70px] lg:h-[90px] container justify-between items-center">
@@ -116,14 +116,14 @@ const Nav = () => {
           {Navlinks.map((item) => (
             <li
               key={item.label}
-              className={`group relative inline-block  overflow-hidden rounded  border-r-gray-100    text-sm font-normal  ${
+              className={`group relative inline-block  overflow-hidden rounded  border-r-gray-100    text-sm font-normal   ${
                 isScrolled ? " text-black  " : "text-white"
               }  focus:outline-none focus:ring `}
             >
               <button
                 onClick={() => handleNavClick(item)}
                 className={`
-             my-4  text-[17px] pl-10  w-[100%] hover:text-blue-400  transition-all ease-in`}
+             my-4  text-[17px] pl-10  w-[100%] hover:text-orange font-semibold  transition-all ease-in`}
               >
                 {item.label}
               </button>
