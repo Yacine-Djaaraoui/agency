@@ -60,14 +60,15 @@ const Testimonials = () => {
     return element;
   };
 
-
-
   return (
     <div>
-      <div className="container mt-24 mb-24 ">
-        <h2 className=" text-2xl lg:text-4xl text-center font-bold mb-3 text-title">
+      <div className="container   ">
+        <p className="text-lg md:text-xl font-semibold text-center text-gray-700 italic">
+          Explore Tour
+        </p>{" "}
+        <h2 className="text-4xl md:text-5xl text-center font-extrabold text-gray-900 leading-tight mb-2">
           {" "}
-          WHAT OUR CLIENTS SAY{" "}
+          What Our Clients Say{" "}
         </h2>
         <div className="container text-center overflow-hidden  ">
           <Carousel

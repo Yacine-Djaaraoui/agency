@@ -27,9 +27,12 @@ const Images = () => {
 
   return (
     <>
-      <div className=" mt-44 mb-44 ">
-        <h2 className=" text-2xl lg:text-4xl text-center font-bold mb-14 text-title">
-          MOST FAVORITE PICTURES
+      <div className=" mt-24 mb-20 ">
+        <p className="text-lg md:text-xl text-center font-semibold text-gray-700 italic">
+          Explore Tour
+        </p>{" "}
+        <h2 className="text-4xl md:text-5xl text-center font-extrabold text-gray-900 leading-tight mb-12">
+          Most Favorite Pictures{" "}
         </h2>
         <div className=" relative pb-28 before:absolute before:w-full before:h-80 before:bottom-0 before:bg-orangeLight  ">
           <div className="container text-center overflow-hidden   ">
