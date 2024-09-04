@@ -8,9 +8,10 @@ import {
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import trips from "../constants";
-
+import { Link } from "react-router-dom";
 // TripCard Component
 const TripCard: React.FC<{ trip: any }> = ({ trip }) => {
+  
   return (
     <div className="border rounded-lg overflow-hidden shadow-lg ">
       {/* Image Section */}
@@ -27,7 +28,7 @@ const TripCard: React.FC<{ trip: any }> = ({ trip }) => {
       </div>
 
       {/* Details Section */}
-      <div className="p-4" >
+      <div className="p-4">
         <div className="flex justify-between mb-4">
           <div className="text-black font-semibold">{trip.days} Days</div>
           <div className="text-black font-semibold">{trip.type}</div>
@@ -37,9 +38,11 @@ const TripCard: React.FC<{ trip: any }> = ({ trip }) => {
         <hr className="border-gray-300 my-4" />
         <div className="flex justify-between items-center">
           <div className="text-xl font-bold">${trip.price}</div>
-          <button className="bg-orange text-white py-2 px-4 rounded-md hover:bg-black">
-            Explore
-          </button>
+          <Link to={`/trip/${trip.country}`}>
+            <button className="bg-orange text-white py-2 px-4 rounded-md hover:bg-black">
+              Explore
+            </button>
+          </Link>
         </div>
       </div>
     </div>
