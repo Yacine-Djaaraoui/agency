@@ -47,6 +47,10 @@ module.exports = {
       fadeIn2: "fadeIn2  ease 3s",
     },
     extend: {
+      fontFamily: {
+        "font-family": "Cairo",
+        "font-rubik": "Rubik",
+      },
       transitionDuration: {
         2000: "2000ms",
         3000: "3000ms",

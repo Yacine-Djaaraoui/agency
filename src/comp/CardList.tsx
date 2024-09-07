@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
@@ -7,17 +7,22 @@ import {
   faCrown,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import trips from "../constants";
+// import tripsFR from "../constants/index";
+import tripsAR from "../constants/indexAR";
 import { Link } from "react-router-dom";
+import { Context } from "./Context";
+import tripsFR from "@/constants";
+import { Languages } from "lucide-react";
 // TripCard Component
 const TripCard: React.FC<{ trip: any }> = ({ trip }) => {
-  
+  const { language } = useContext(Context);
+
   return (
     <div className="border rounded-lg overflow-hidden shadow-lg ">
       {/* Image Section */}
       <div className="relative">
         <img
-          src={trip.image}
+          src={trip.image[0]}
           alt={trip.place}
           className="w-full h-64 object-cover"
         />
@@ -30,18 +35,35 @@ const TripCard: React.FC<{ trip: any }> = ({ trip }) => {
       {/* Details Section */}
       <div className="p-4">
         <div className="flex justify-between mb-4">
-          <div className="text-black font-semibold">{trip.days} Days</div>
+          {language === "FR" ? (
+            <div className="text-black font-semibold">{trip.days} Jours</div>
+          ) : (
+            <div className="text-black font-semibold flex items-center gap-1">
+              {" "}
+              <span> أيام </span>
+              <span className="font-semibold font-font-rubik">
+                {" "}
+                {trip.days}{" "}
+              </span>
+            </div>
+          )}
           <div className="text-black font-semibold">{trip.type}</div>
         </div>
         <h3 className="text-xl font-bold mb-2">{trip.country}</h3>
         <h4 className="text-lg font-semibold mb-4">{trip.place}</h4>
         <hr className="border-gray-300 my-4" />
         <div className="flex justify-between items-center">
-          <div className="text-xl font-bold">${trip.price}</div>
-          <Link to={`/trip/${trip.country}`}>
-            <button className="bg-orange text-white py-2 px-4 rounded-md hover:bg-black">
-              Explore
-            </button>
+          <div className="text-xl font-bold">{trip.price}DA</div>
+          <Link to={`/trip/${trip.id}`}>
+            {language === "FR" ? (
+              <button className="bg-orange text-white py-2 px-4 rounded-md hover:bg-black">
+                Détails
+              </button>
+            ) : (
+              <button className="bg-orange text-white py-2 px-4 rounded-md hover:bg-black">
+                التفاصيل
+              </button>
+            )}
           </Link>
         </div>
       </div>
@@ -63,7 +85,8 @@ const TripList: React.FC<{ trips: any[] }> = ({ trips }) => {
 // CardList Component
 const CardList: React.FC = () => {
   const [filterType, setFilterType] = useState<string>("All");
-
+  const { language } = useContext(Context);
+  const trips = language === "AR" ? tripsAR : tripsFR;
   const getFilteredTrips = (type: string) => {
     return type === "All" ? trips : trips.filter((trip) => trip.type === type);
   };
@@ -74,12 +97,12 @@ const CardList: React.FC = () => {
     <section className="container mx-auto p-4 mt-16 ">
       <div className="text-center mb-6">
         <p className="mt-4 text-center mb-5">
-          <span className="text-lg md:text-xl font-semibold text-gray-700 italic">
-            Get to know us
+          <span className="text-lg md:text-xl font-semibold text-gray-700 italic font-font-family">
+            الرحلات المتاحة
           </span>{" "}
           <br />
-          <span className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight ">
-            Explore the world
+          <span className="text-4xl md:text-5xl font-extrabold font-font-rubik text-gray-900 leading-tight ">
+            Voyages disponibles
           </span>
         </p>
         <ul className="flex flex-wrap justify-center gap-4 mb-8">
@@ -96,9 +119,9 @@ const CardList: React.FC = () => {
             <FontAwesomeIcon icon={faGem} />
             <span
               className="ml-2 cursor-pointer"
-              onClick={() => setFilterType("Luxury")}
+              onClick={() => setFilterType("Luxe")}
             >
-              Luxury
+              Luxe
             </span>
           </li>
           <li className="flex items-center">
