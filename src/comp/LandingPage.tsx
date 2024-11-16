@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Context } from "./Context";
 
 const images = [
-  "../../public/images/pexels-francesco-ungaro-273758.jpg",
+  "./public/images/pexels-francesco-ungaro-273758.jpg",
 
-  "../../public/images/284553.jpg",
-  "../../public/images/pexels-pixabay-210012.jpg",
+  "./public/images/284553.jpg",
+  "./public/images/pexels-pixabay-210012.jpg",
   // Add more image paths as needed
 ];
 
