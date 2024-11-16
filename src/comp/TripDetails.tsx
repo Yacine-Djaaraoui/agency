@@ -63,7 +63,7 @@ const TripDetails = () => {
           name: form.name,
           email: form.email,
           phone: form.phone,
-
+          voyage: tripDes.country,
           message: form.message,
         },
         import.meta.env.VITE_PUBLIC_KEY
@@ -76,7 +76,6 @@ const TripDetails = () => {
             name: "",
             email: "",
             phone: "",
-
             message: "",
           });
         },
@@ -452,7 +451,7 @@ const TripDetails = () => {
                 <div className="w-full max-md:text-center">
                   <button
                     type="submit"
-                    className="bg-[#f38b58] text-white py-2 px-4 rounded-md hover:bg-black-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="bg-orange text-white py-2 px-4 rounded-md hover:bg-black-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   >
                     {loading ? "Submitting ..." : "Envoyer"}
                   </button>
