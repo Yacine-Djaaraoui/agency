@@ -43,7 +43,7 @@ const LandingPage = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-3000 ease-in-out transform  ${
+            className={`absolute inset-0   ${
               index === currentIndex
                 ? "  opacity-100 scale-125 z-20"
                 : "opacity-0 scale-100"
