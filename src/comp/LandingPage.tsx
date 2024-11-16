@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import Nav from "./Nav";
 import { Button } from "@/components/ui/button";
 import { Context } from "./Context";
+import img1 from "../../public/images/pexels-francesco-ungaro-273758.jpg";
+import img2 from "../../public/images/284553.jpg";
+import img3 from "../../public/images/pexels-pixabay-210012.jpg";
 
 const images = [
-  "./public/images/pexels-francesco-ungaro-273758.jpg",
-
-  "./public/images/284553.jpg",
-  "./public/images/pexels-pixabay-210012.jpg",
+  img1,
+  img2,
+  img3,
   // Add more image paths as needed
 ];
 
@@ -43,14 +45,14 @@ const LandingPage = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0   ${
+            className={`absolute inset-0 transition-all duration-3000 ease-in-out transform  ${
               index === currentIndex
                 ? "  opacity-100 scale-125 z-20"
                 : "opacity-0 scale-100"
             }`}
           >
             <img
-              src={image}
+              src={image} 
               alt={`Slide ${index}`}
               className="w-full h-screen object-cover"
             />
