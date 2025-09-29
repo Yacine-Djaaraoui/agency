@@ -35,8 +35,8 @@ const tripsFR: Trip[] = [
     days: 7,
     type: "Premium",
     image: [
-      "https://i.ibb.co/t3LhGnd/Kyoto.jpg",
-      "https://i.ibb.co/t3LhGnd/Kyoto.jpg",
+      "https://tcsvoyages.ch/wp-content/uploads/2019/10/shutterstock-2407392777-pagode-de-chureito-attraction-touristique-du-japon-celebre-mtfuji-1620x1080.jpg",
+      "https://www.nippon.com/fr/ncommon/contents/japan-data/1499242/1499242.jpg",
     ],
     price: 2500, // price in USD
     overview:
@@ -70,8 +70,8 @@ const tripsFR: Trip[] = [
     days: 5,
     type: "Luxe",
     image: [
-      "https://i.ibb.co/b580j8V/download.jpg",
-      "https://i.ibb.co/b580j8V/download.jpg",
+      "https://cdn.britannica.com/82/195482-050-2373E635/Amalfi-Italy.jpg",
+      "https://www.planetware.com/photos-large/I/italy-colosseum-day.jpg",
     ],
     price: 3200, // price in USD
     overview:
@@ -105,8 +105,8 @@ const tripsFR: Trip[] = [
     days: 4,
     type: "Premium",
     image: [
-      "https://i.ibb.co/TLwppF2/paris.jpg",
-      "https://i.ibb.co/TLwppF2/paris.jpg",
+      "https://cdn.sortiraparis.com/images/80/83517/753564-visuel-paris-tour-eiffel-rue.jpg",
+      "https://gobargingwp-s3.s3.eu-west-1.amazonaws.com/wp-content/uploads/2019/02/Louvre-Paris.jpg",
     ],
     price: 2200, // price in USD
     overview:
