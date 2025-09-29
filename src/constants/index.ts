@@ -105,7 +105,7 @@ const tripsFR: Trip[] = [
     days: 4,
     type: "Premium",
     image: [
-      "https://cdn.sortiraparis.com/images/80/83517/753564-visuel-paris-tour-eiffel-rue.jpg",
+      "https://img.static-af.com/transform/45cb9a13-b167-4842-8ea8-05d0cc7a4d04/",
       "https://gobargingwp-s3.s3.eu-west-1.amazonaws.com/wp-content/uploads/2019/02/Louvre-Paris.jpg",
     ],
     price: 2200, // price in USD
